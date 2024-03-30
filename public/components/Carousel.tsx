@@ -40,8 +40,8 @@ const Carousel = ({isDarkMode}:{isDarkMode:Boolean}) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
-    prevArrow: <PrevArrow  />,
-    nextArrow: <NextArrow />
+    prevArrow: <PrevArrow  onClick={onclick}/>,
+    nextArrow: <NextArrow onClick={onclick}/>
     
     // nextArrow: (
     //   <div>
