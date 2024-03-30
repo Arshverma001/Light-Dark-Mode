@@ -7,6 +7,7 @@ import Image from "next/image";
 
 interface Child{
   isDarkMode:Boolean;
+  onClick : any;
 }
 
 const PrevArrow = ({ onClick }:{onClick:any}) => (
@@ -40,8 +41,8 @@ const Carousel = ({isDarkMode}:{isDarkMode:Boolean}) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
-    prevArrow: <PrevArrow  onClick={onclick}/>,
-    nextArrow: <NextArrow onClick={onclick}/>
+    prevArrow: <PrevArrow onClick={PrevArrow}/>,
+    nextArrow: <NextArrow onClick={NextArrow}/>,
     
     // nextArrow: (
     //   <div>
