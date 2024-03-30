@@ -9,20 +9,40 @@ interface Child{
   isDarkMode:Boolean;
 }
 
+const PrevArrow = ({ onClick }:{onClick:any}) => (
+  <button  onClick={onClick}>
+    <div className="absolute top-[50%] left-[-10%]  w-8 h-10 bg-gradient-to-r dark:from-[#18282A] dark:to-[#221A2C] border-2 border-blue-500">
+    <div className=" my-3  inline-block  w-4 h-4 border-t-4 border-l-4 border-blue-500 transform -rotate-45"></div>
+    </div>
+  </button>
+);
+
+// Custom next arrow component
+const NextArrow = ({ onClick }:{onClick:any}) => (
+  <button onClick={onClick}>
+    <div className=" absolute top-[50%] right-[-10%] w-8 h-10 bg-gradient-to-r dark:from-[#18282A] dark:to-[#221A2C] border-2 border-blue-500">
+    <div className="my-3   inline-block w-4 h-4 border-t-4 border-l-4 border-blue-500 custom-rotation"></div>
+    </div>
+  </button>
+);
+
 const Carousel = ({isDarkMode}:{isDarkMode:Boolean}) => {
  const data :{id: number; img: string; title: string; date: string; venue: string;}[]=[
   {id:1,img :"/Images/img5.jpg",title: "Las Vegas Aviators",date : "OCT 15 |SUN|4:30 PM",venue :"Las Vegas Ballpark, Las Vegas, Nevada"},
   {id:2,img :"/Images/img6.jpg",title: "Sacramento River Cats",date : "OCT 15 |SUN|4:30 PM",venue :"Sutter Health , Sacramento, California"},
   {id:3,img :"/Images/img5.jpg",title: "Las Vegas Aviators",date : "OCT 15 |SUN|4:30 PM",venue :"Las Vegas Ballpark, Las Vegas, Nevada"},
-  {id:4,img :"/Images/img3.jpg",title: "Sacramento River Cats",date : "OCT 15 |SUN|4:30 PM",venue :"Sutter Health Park, Sacramento, California"},
+  {id:4,img :"/Images/img3.jpg",title: "Sacramento River Cats",date : "OCT 15 |SUN|4:30 PM",venue :"Sutter Health , Sacramento, California"},
  ]
 
   const settings = {
-    dots: true,
+    dots: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
+    prevArrow: <PrevArrow  />,
+    nextArrow: <NextArrow />
+    
     // nextArrow: (
     //   <div>
     //     <div className="next-slick-arrow">
